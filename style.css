@@ -1,0 +1,157 @@
+/* Default (Light Mode) */
+body {
+  background: linear-gradient(135deg, #e6e9f0, #eef1f5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.calculator {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: background 0.3s;
+}
+
+#display {
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  text-align: right;
+  box-sizing: border-box;
+  transition: background 0.3s, color 0.3s;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #dbeafe;
+  transform: scale(1.05);
+}
+
+.equal {
+  grid-row: span 2;
+  background-color: #60a5fa;
+  color: white;
+}
+
+.equal:hover {
+  background-color: #3b82f6;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #4b5563;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* 🌙 Dark Mode Styling */
+body.dark {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  color: #f9fafb;
+}
+
+body.dark .calculator {
+  background: #1e293b;
+}
+
+body.dark #display {
+  background-color: #334155;
+  color: white;
+}
+
+body.dark .btn {
+  background-color: #475569;
+  color: #f9fafb;
+}
+
+body.dark .btn:hover {
+  background-color: #64748b;
+}
+
+body.dark .equal {
+  background-color: #3b82f6;
+  color: white;
+}
+
+body.dark .equal:hover {
+  background-color: #2563eb;
+}
+
